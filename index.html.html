@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Israr</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <style>
+    body.light-mode h1,
+body.light-mode h2 {
+  color: black;
+}
+
+    body {
+
+
+      
+body.light-mode {
+  background: #fff;
+  color: #000;
+}
+
+/* Update other elements also */
+body.light-mode .theme-toggle {
+  background: black;
+  color: white;
+}
+
+/* 👇 Yeh separate hona chahiye */
+body.light-mode h1,
+body.light-mode h2 {
+  color: black;
+}
+
+
+      
+      font-family: 'Great Vibes', cursive;
+      margin: 0;
+      background: #000;
+      color: white;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: gold;
+      color: black;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 1em;
+      z-index: 1001;
+    }
+    .container {
+      text-align: center;
+      padding: 30px 20px;
+      max-width: 1000px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      font-size: 3.5em;
+      color: gold;
+      margin-bottom: 10px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    h2 {
+      color: gold;
+      margin-top: 40px;
+      font-size: 2.2em;
+    }
+    p {
+      font-size: 1.7em;
+      margin: 20px 0;
+    }
+    .reveal-btn, .blow-btn {
+      padding: 12px 30px;
+      background: gold;
+      border: none;
+      border-radius: 30px;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1.2em;
+      transition: transform 0.3s;
+    }
+    .reveal-btn:hover, .blow-btn:hover {
+      transform: scale(1.05);
+    }
+    .hidden-message {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.8em;
+      color: #fff5cc;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    .typewriter {
+      margin: 30px auto;
+      border-right: 2px solid gold;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
+      animation: typing 4s steps(40, end), blink 0.75s step-end infinite;
+      font-size: 2em;
+      max-width: 700px;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .countdown {
+      font-size: 2em;
+      margin-top: 20px;
+      color: gold;
+    }
+    .gallery, .videos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .gallery img, .videos video {
+      width: 300px;
+      border: 3px solid gold;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover, .videos video:hover {
+      transform: scale(1.05);
+    }
+    .heart {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: fall 5s linear infinite;
+      top: -20px;
+      z-index: 0;
+    }
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(45deg); opacity: 0; }
+    }
+
+    .cake-section {
+      margin-top: 50px;
+    }
+    .cake-img {
+      width: 250px;
+      margin-bottom: 20px;
+    }
+    .candle-flame {
+      width: 10px;
+      height: 20px;
+      background: orange;
+      margin: 0 auto;
+      border-radius: 50% 50% 0 0;
+      animation: flame 0.6s infinite alternate;
+    }
+    @keyframes flame {
+      0% { transform: scaleY(1); opacity: 1; }
+      100% { transform: scaleY(1.4); opacity: 0.6; }
+    }
+    .popup {
+      display: none;
+      margin-top: 20px;
+      color: #fff;
+      font-size: 1.8em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .letter-scroll {
+  background: #1a1a1a;
+  border: 2px dashed gold;
+  padding: 30px;
+  margin-top: 50px;
+  font-size: 1.8em;
+  max-height: 300px;
+  overflow-y: scroll;
+  line-height: 2em;
+  color: #fffbe6;
+  font-family: 'Great Vibes', cursive;
+  font-style: italic;  /* 👈 Makes text italic */
+  border-radius: 12px;
+}
+
+  
+
+    .confession-slider {
+      margin-top: 50px;
+      font-size: 2em;
+      color: #fff2cc;
+      min-height: 60px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    /* Scratch Card */
+    .scratch-card-container {
+      position: relative;
+      width: 300px;
+      height: 150px;
+      margin: 3rem auto;
+      border: 2px solid gold;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 12px gold;
+    }
+    .hidden-msg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: #000;
+      color: gold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2em;
+      padding: 10px;
+      z-index: 0;
+    }
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+    
+  </style>
+</head>
+<body>
+
+
+  
+  <div class="theme-toggle" onclick="toggleTheme()">Switch Theme</div>
+  <div class="container">
+    <h1>Happy Birthday Israr</h1>
+    <button class="reveal-btn" onclick="showWish()">🎁 Open Your Wish</button>
+    <div class="hidden-message" id="wishMessage">Wishing you love, laughter, and magical moments forever. ❤️</div>
+
+    <div class="typewriter">You are the reason every moment feels special... 💫</div>
+    <div class="countdown" id="countdown"></div>
+
+    <div class="cake-section">
+      <h2>🎂 Blow the Candle & Make a Wish</h2>
+      <img src="img/birthday-cake-with-candle-on-top-on-dark-background-ai-generated-free-photo.jpg" alt="Birthday Cake" class="cake-img">
+      <div id="candle" class="candle-flame"></div>
+      <button class="blow-btn" onclick="blowCandle()">Blow Candle</button>
+      <div class="popup" id="wishPopup">🌟 Make a Wish... May all your dreams come true! 💫</div>
+    </div>
+
+    <!-- 🍰 Cut the Cake Section -->
+<div style="text-align: center; margin-top: 50px;">
+  <h2 style="color: gold; font-family: 'Great Vibes', cursive;">🍰 Cut the Cake</h2>
+  
+  <img id="cakeImage" src="img/cake.png" alt="Cake" style="width: 250px; transition: opacity 1s ease;">
+  
+  <br>
+  
+  <button onclick="cutCake()" style="margin-top: 15px; padding: 10px 25px; background-color: gold; color: black; border: none; border-radius: 10px; cursor: pointer; font-size: 1.2em;">
+    🎂 Cut the Cake
+  </button>
+  
+  <div id="cutMessage" style="display: none; margin-top: 15px; color: #fff8cc; font-size: 1.5em; font-family: cursive;">
+    🎉 Yay! You made the first slice, Happy Birthday Israr!
+  </div>
+</div>
+
+<!-- 👇 Add this at the end of your HTML, just before </body> -->
+<script>
+  function cutCake() {
+    const cake = document.getElementById("cakeImage");
+    const message = document.getElementById("cutMessage");
+
+    cake.style.opacity = "0";
+    setTimeout(() => {
+      cake.src = "img/cake-cut.png"; // ✅ Make sure this image exists
+      cake.style.opacity = "1";
+      message.style.display = "block";
+    }, 1000);
+  }
+</script>
+
+
+    <h2>📜 A Letter From Ramsha</h2>
+  <div class=" letter-scroll ">
+     "Zindagi ke is khaas din par,<br>
+    dua hai ke tumhara har sapna poora ho,<br>
+    aur har lamha tumhare liye khushi lekar aaye." 💫<br><br>
+    ~ Happy Birthday Israr 🎉
+    </div>
+
+    <h2>💌 Confession Slider</h2>
+    <div class="confession-slider" id="confessionSlider"></div>
+
+    <h2>📸 Memories</h2>
+    <div class="gallery">
+      <img src="img/11 (1).jpeg" alt="Memory 1">
+      <img src="img/3 (1).jpeg" alt="Memory 2">
+      <img src="img/3 (2).jpeg" alt="Memory 3">
+<img src="img/3 (3).jpeg" alt="Memory 4">
+<img src="img/4 (1).jpeg" alt="Memory 5">
+<img src="img/4 (2).jpeg" alt="Memory 6">
+
+    </div>
+
+<!-- 🎉 Guestbook Wish Form -->
+<div style="text-align: center; margin-top: 50px;">
+  <h2 style="color: gold; font-family: cursive;">💌 Send Your Birthday Wish</h2>
+  <form id="wishForm" style="max-width: 400px; margin: auto;">
+    <input type="text" id="name" placeholder="Your Name" required
+      style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid gold;">
+    <textarea id="message" placeholder="Your Wish..." required
+      style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid gold; height: 80px;"></textarea>
+    <br>
+    <button type="submit"
+      style="margin-top: 10px; padding: 10px 20px; background-color: gold; color: black; border: none; border-radius: 8px; cursor: pointer;">
+      Send Wish
+    </button>
+  </form>
+</div>
+
+<!-- 📝 Display Wishes -->
+<div id="wishBoard" style="margin-top: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+  <h3 style="color: white; text-align: center; font-family: cursive;">🎊 Wishes Received</h3>
+  <div id="wishesList" style="color: gold; font-family: 'Courier New', monospace;"></div>
+</div>
+
+
+
+<!-- 🧩 Puzzle Gallery Section - Add Before Scratch Card -->
+<h2 style="text-align:center; color:gold; margin-top:50px;">🧩 Solve the Puzzle to Reveal the Message</h2>
+<div id="puzzle-container"></div>
+<div id="puzzle-message">🎉 Happy Birthday Israr! 🎉</div>
+<img id="puzzle-surprise-img" src="img/new.jpeg" alt="Surprise" style="display:none; margin: 20px auto; border: 3px solid rgb(12, 12, 10); border-radius: 10px; box-shadow: 0 0 20px gold; max-width: 100%; height: auto;">
+
+<style>
+  #puzzle-container {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid rgb(214, 97, 97);
+    margin: 30px auto;
+  }
+
+  .piece {
+    width: 100px;
+    height: 100px;
+    background-image: url("img/israr.jpeg");
+    background-size: 300px 300px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
+    cursor: grab;
+  }
+
+  #puzzle-message {
+    display: none;
+    text-align: center;
+    color: rgb(214, 97, 97);
+    font-size: 1.5em;
+    margin-top: 20px;
+    font-family: cursive;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    #puzzle-container {
+      width: 240px;
+      height: 240px;
+    }
+
+    .piece {
+      width: 80px;
+      height: 80px;
+      background-size: 240px 240px;
+    }
+
+    #puzzle-message {
+      font-size: 1.2em;
+    }
+
+    #puzzle-surprise-img {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #puzzle-container {
+      width: 180px;
+      height: 180px;
+    }
+
+    .piece {
+      width: 60px;
+      height: 60px;
+      background-size: 180px 180px;
+    }
+  }
+
+  body.light-mode {
+    background: rgb(221, 187, 187);
+    color: #000;
+  }
+
+  body.light-mode h1,
+  body.light-mode h2,
+  body.light-mode p,
+  body.light-mode .hidden-message,
+  body.light-mode .letter-scroll,
+  body.light-mode .confession-slider,
+  body.light-mode .countdown {
+    color: #000;
+  }
+
+  body.light-mode .theme-toggle {
+    background: black;
+    color:rgb(221, 187, 187);
+  }
+
+  body.light-mode .reveal-btn,
+  body.light-mode .blow-btn {
+    background: black;
+    color: rgb(221, 187, 187);
+  }
+
+  body.light-mode .gallery img,
+  body.light-mode .videos video,
+  body.light-mode #puzzle-container,
+  body.light-mode .scratch-card-container {
+    border-color: black;
+    box-shadow: 0 0 15px black;
+  }
+</style>
+
+<script>
+  const container = document.getElementById('puzzle-container');
+  const messageBox = document.getElementById('puzzle-message');
+  const totalPieces = 9;
+  const pieces = [];
+
+  for (let i = 0; i < totalPieces; i++) {
+    const piece = document.createElement('div');
+    piece.classList.add('piece');
+    piece.setAttribute('draggable', true);
+    piece.dataset.index = i;
+    piece.style.backgroundPosition = `-${(i % 3) * 100}px -${Math.floor(i / 3) * 100}px`;
+    pieces.push(piece);
+  }
+
+  pieces.sort(() => Math.random() - 0.5).forEach(piece => container.appendChild(piece));
+
+  let dragged = null;
+
+  container.addEventListener('dragstart', e => {
+    if (e.target.classList.contains('piece')) {
+      dragged = e.target;
+    }
+  });
+
+  container.addEventListener('dragover', e => {
+    e.preventDefault();
+  });
+
+  container.addEventListener('drop', e => {
+    if (e.target.classList.contains('piece') && dragged && e.target !== dragged) {
+      const allPieces = Array.from(container.children);
+      const draggedIndex = allPieces.indexOf(dragged);
+      const targetIndex = allPieces.indexOf(e.target);
+
+      if (draggedIndex < targetIndex) {
+        container.insertBefore(dragged, e.target.nextSibling);
+      } else {
+        container.insertBefore(dragged, e.target);
+      }
+
+      setTimeout(checkPuzzle, 100);
+    }
+  });
+
+  function checkPuzzle() {
+    const current = Array.from(container.children);
+    const correct = current.every((piece, index) => piece.dataset.index == index);
+
+    if (correct) {
+      messageBox.style.display = 'block';
+      container.style.boxShadow = "0 0 20px gold";
+      current.forEach(piece => {
+        piece.setAttribute('draggable', false);
+        piece.style.cursor = 'default';
+      });
+      document.getElementById("puzzle-surprise-img").style.display = 'block';
+    }
+  }
+
+  function toggleTheme() {
+    document.body.classList.toggle('light-mode');
+  }
+</script>
+
+
+
+
+<!-- 📜 JavaScript Logic -->
+<script>
+  const form = document.getElementById('wishForm');
+  const wishesList = document.getElementById('wishesList');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (name && message) {
+      const wishItem = document.createElement('div');
+      wishItem.style.marginBottom = '20px';
+      wishItem.innerHTML = `<strong>${name}</strong> says:<br><em>${message}</em><hr style="border-color:gold;">`;
+
+      wishesList.prepend(wishItem); // Latest wish on top
+
+      // Reset form
+      form.reset();
+    }
+  });
+</script>
+
+
+
+
+
+
+
+    <h2>🎬 Moments Captured</h2>
+    <div class="videos">
+      <video controls src="img/11 (2).mp4"></video>
+      <video controls src="img/13 (2).mp4"></video>
+      <video controls src="img/13 (1).mp4"></video>
+<video controls src="img/vvv.mp4"></video>
+<video controls src="img/12 (1).mp4"></video>
+<video controls src="img/12 (2).mp4"></video>
+    </div>
+
+    <!-- 🎁 Scratch Card Feature -->
+    <h2>🎁 Scratch to Reveal Your Surprise</h2>
+    <div class="scratch-card-container">
+      <div class="hidden-msg">
+        You are the most precious gift life has given me. Happy Birthday Israr! 💖
+      </div>
+      <canvas id="scratchCanvas" width="300" height="150"></canvas>
+    </div>
+  </div>
+
+  <script>
+    function showWish() {
+      document.getElementById("wishMessage").style.display = 'block';
+    }
+
+
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("July 3, 2025 00:00:00").getTime();
+
+    setInterval(() => {
+      const now = new Date().getTime();
+      const gap = targetDate - now;
+      const days = Math.floor(gap / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((gap % (1000 * 60)) / 1000);
+      countdown.innerHTML = `🎂 ${days}d ${hours}h ${minutes}m ${seconds}s left`;
+    }, 1000);
+
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = 3 + Math.random() * 5 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 8000);
+    }, 300);
+
+    function blowCandle() {
+      document.getElementById("candle").style.display = 'none';
+      document.getElementById("wishPopup").style.display = 'block';
+    }
+
+    const confessions = [
+      "You're the reason I believe in magic.",
+      "I still get butterflies when I think of you.",
+      "You make my world brighter.",
+      "Every day with you feels like a dream."
+    ];
+    let confessionIndex = 0;
+    setInterval(() => {
+      document.getElementById("confessionSlider").innerText = confessions[confessionIndex];
+      confessionIndex = (confessionIndex + 1) % confessions.length;
+    }, 4000);
+
+    // 🎁 Scratch Card Script
+    const canvas = document.getElementById("scratchCanvas");
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#c0c0c0";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    let isDrawing = false;
+    function getPos(e) {
+      const rect = canvas.getBoundingClientRect();
+      return {
+        x: (e.touches ? e.touches[0].clientX : e.clientX) - rect.left,
+        y: (e.touches ? e.touches[0].clientY : e.clientY) - rect.top
+      };
+    }
+
+    function draw(e) {
+      if (!isDrawing) return;
+      const pos = getPos(e);
+      ctx.globalCompositeOperation = "destination-out";
+      ctx.beginPath();
+      ctx.arc(pos.x, pos.y, 15, 0, 2 * Math.PI);
+      ctx.fill();
+    }
+
+    canvas.addEventListener("mousedown", () => isDrawing = true);
+    canvas.addEventListener("mouseup", () => isDrawing = false);
+    canvas.addEventListener("mousemove", draw);
+    canvas.addEventListener("touchstart", () => isDrawing = true);
+    canvas.addEventListener("touchend", () => isDrawing = false);
+    canvas.addEventListener("touchmove", draw);
+  </script>
+
+  <audio autoplay loop>
+    <source src="music/happy-birthday-music-box(chosic.com).mp3" type="audio/mpeg">
+  </audio>
+</body>
+</html>
